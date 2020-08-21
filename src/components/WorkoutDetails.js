@@ -3,9 +3,11 @@ import { Container, Row, Alert, CardHeader, Card, CardFooter, CardTitle, CardTex
 import { ListGroup, ListGroupItem } from 'reactstrap';
 import {Button} from 'react-bootstrap'
 import axios from 'axios';
+import EditWorkoutForm from './EditWorkoutForm'
 export default class WorkoutDetails extends Component {
     state={
-        currentWorkout:''
+        currentWorkout:'',
+        editState:false
     }
 
     componentDidMount(){
@@ -15,6 +17,9 @@ export default class WorkoutDetails extends Component {
         console.log(this.props.workout)
     }
 
+    toggleEditState=()=>{
+        this.setState({editState:true})
+    }
 
     handleDelete=(workout_id)=>{
         console.log(workout_id)
@@ -32,9 +37,10 @@ export default class WorkoutDetails extends Component {
           });
     }
     render() {
-        const {currentWorkout}=this.state
+        const {currentWorkout,editState}=this.state
         if(currentWorkout!==''){
             console.log(currentWorkout)
+         if(!editState){
         return (
 <div className='col'>
         <div className=' col-sm-12 col-md-12 col-xs-12 '>
@@ -49,7 +55,7 @@ export default class WorkoutDetails extends Component {
 
                 </ListGroup>
                 <br/>
-                <Button onClick={() => this.toggleFormDisplay()} variant='info'>
+                <Button onClick={() => this.toggleEditState()} variant='info'>
               Edit
             </Button>{' '}
             <Button onClick={() => this.handleDelete(currentWorkout._id)} variant='danger'>
@@ -63,8 +69,14 @@ export default class WorkoutDetails extends Component {
             </div>
         )
         }
+  
         else{
-            return <p>An error occured</p>
+            return <EditWorkoutForm workout={currentWorkout}/>
         }
+
+    }
+    else{
+        return <p>an error occured</p>
+    }
     }
 }
