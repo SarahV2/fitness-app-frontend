@@ -67,3 +67,11 @@ body{
   color: orange;
   font-weight: bold;
 }
+
+
+@media only screen and (max-width: 600px) {
+  .muscleInfo{
+    margin-bottom: 80%;
+  }
+  
+}

@@ -85,7 +85,7 @@ export default class NewWorkoutForm extends Component {
     return (
       <div className='col'>
         <h6>Add Exercise</h6>
-        <div className='col-md-5 col-xs-12 signup-form'>
+        <div className='workout-form col-sm-12 col-md-12 col-xs-6 signup-form'>
           <Form>
             {showAlerts ? <div id='alerts-container'>{alerts}</div> : ''}
 
