@@ -66,7 +66,7 @@ export default class MuscleInfo extends Component {
               View Details
             </Button>
           )}
-
+ <br />
           {this.state.displayForm ? (
             <NewWorkoutForm muscleID={currentMuscle.id} />
           ) : (

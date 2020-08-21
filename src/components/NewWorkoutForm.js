@@ -36,6 +36,7 @@ export default class NewWorkoutForm extends Component {
         this.setState({
           redirect: false,
         });
+        window.location.href = "/";
       })
       .catch((error) => {
         this.toggleAlert();

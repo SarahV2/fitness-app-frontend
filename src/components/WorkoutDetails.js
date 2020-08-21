@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
-import { Container, Button, Row, Alert, CardHeader, Card, CardFooter, CardTitle, CardText, CardBody,Col } from 'reactstrap';
+import { Container, Row, Alert, CardHeader, Card, CardFooter, CardTitle, CardText, CardBody,Col } from 'reactstrap';
 import { ListGroup, ListGroupItem } from 'reactstrap';
-
+import {Button} from 'react-bootstrap'
+import axios from 'axios';
 export default class WorkoutDetails extends Component {
     state={
         currentWorkout:''
@@ -13,6 +14,23 @@ export default class WorkoutDetails extends Component {
         })
         console.log(this.props.workout)
     }
+
+
+    handleDelete=(workout_id)=>{
+        console.log(workout_id)
+        axios
+        .delete(`http://localhost:5000/api/workouts/${workout_id}`, )
+        .then((res) => {
+          console.log(res);
+          window.location.href = "/";
+         
+        })
+        .catch((error) => {
+
+          console.log(error);
+ 
+          });
+    }
     render() {
         const {currentWorkout}=this.state
         if(currentWorkout!==''){
@@ -21,7 +39,7 @@ export default class WorkoutDetails extends Component {
 <div className='col'>
         <div className=' col-sm-12 col-md-12 col-xs-12 '>
             <Card >
-              <CardHeader className="text-center"><b>Summary</b></CardHeader>
+              <CardHeader className="text-center"><b>Exercise Summary</b></CardHeader>
               <CardBody>
                 <ListGroup variant="flush" className='bookDetails text-left'>
                   <ListGroupItem><b>Name:</b> {currentWorkout.exerciseName}</ListGroupItem>
@@ -30,6 +48,13 @@ export default class WorkoutDetails extends Component {
                   <ListGroupItem><b>Notes:</b> {currentWorkout.notes?currentWorkout.notes:'-'}</ListGroupItem>
 
                 </ListGroup>
+                <br/>
+                <Button onClick={() => this.toggleFormDisplay()} variant='info'>
+              Edit
+            </Button>{' '}
+            <Button onClick={() => this.handleDelete(currentWorkout._id)} variant='danger'>
+              Delete
+            </Button>
               </CardBody>
             </Card>
     
