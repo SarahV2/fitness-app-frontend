@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Button } from 'react-bootstrap';
 import MusclesList from './MusclesList';
 import axios from 'axios';
+import Login from './Login';
 export default class Home extends Component {
   state = {
     userWorkouts: '',
@@ -27,6 +28,8 @@ export default class Home extends Component {
 
   render() {
     const {userWorkouts}=this.state
+    const userID = JSON.parse(localStorage.getItem('currentUserID'));
+
     return (
       <div>
         <div className='row justify-content-center '>
@@ -37,8 +40,9 @@ export default class Home extends Component {
             style={{ width: '100vw', marginTop: '0.4%', marginBottom: '2%' }}
           />
         </div>
+        {!userID?<Login/>:''}
         {userWorkouts!==''? <MusclesList workouts={userWorkouts} />:''}
-       
+     
       </div>
     );
   }

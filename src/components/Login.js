@@ -80,7 +80,7 @@ export default class Login extends Component {
 
     return (
       <div className='col'>
-        <h3>Login</h3>
+        <h3>Login to Continue</h3>
         <div className='col-md-5 col-xs-12 signup-form'>
           <Form>
             {showAlerts ? <div id='alerts-container'>{alerts}</div> : ''}

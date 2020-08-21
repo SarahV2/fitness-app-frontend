@@ -22,6 +22,7 @@ export class NavigationBar extends Component {
     this.setState({
       loggedIn: false,
     });
+    window.location.href = "/";
   };
   render() {
     if (this.state.redirect) {
