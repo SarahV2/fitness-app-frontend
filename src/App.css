@@ -36,3 +36,34 @@
     transform: rotate(360deg);
   }
 }
+
+#main-img {
+  width: 50vw;
+  height: 65vh;
+  margin: 1% 0;
+}
+
+body{
+  overflow-x: hidden;
+}
+
+.col{
+  text-align: center;
+}
+.signup-form{
+  text-align: left;
+  padding:10px;
+  border: 1px solid black;
+  border-radius: 5px;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+#submit-button{
+  text-align: center;
+}
+
+#userName{
+  color: orange;
+  font-weight: bold;
+}
