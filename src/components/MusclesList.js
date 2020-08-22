@@ -1,14 +1,12 @@
 import React, { Component } from 'react';
-import { Button } from 'react-bootstrap';
-import NewWorkoutForm from './NewWorkoutForm';
 import MuscleInfo from './MuscleInfo';
 let listOfMuscles = [
-  { id: 1, name: 'Muscle 1', url: 'img001.jpg' },
-  { id: 2, name: 'Muscle 2', url: 'img002.jpg' },
-  { id: 3, name: 'Muscle 3', url: 'img003.jpg' },
-  { id: 4, name: 'Muscle 4', url: 'img003.jpg' },
-  { id: 5, name: 'Muscle 5', url: 'img003.jpg' },
-  { id: 6, name: 'Muscle 6', url: 'img003.jpg' },
+  { id: 1, name: 'Abdominis', url: 'img001.jpeg' },
+  { id: 2, name: 'Hamstring', url: 'img002.jpeg' },
+  { id: 3, name: 'Chest', url: 'img003.jpeg' },
+  { id: 4, name: 'Hamstring', url: 'img004.jpeg' },
+  { id: 5, name: 'Triceps', url: 'img005.jpeg' },
+  { id: 6, name: 'Biceps', url: 'img006.jpeg' },
 ];
 export default class MusclesList extends Component {
   state = {

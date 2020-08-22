@@ -66,7 +66,7 @@ export default class Login extends Component {
     const loggedIn = localStorage.getItem('currentName');
 
     if (this.state.redirect || loggedIn) {
-      window.location.href = '/';
+      window.location.href = '/home';
     }
 
     const { showAlerts, errorMessages } = this.state;
@@ -120,7 +120,7 @@ export default class Login extends Component {
             <Form.Text className="text-center">Doesn't have an account? <Link to='/signup'>Sign Up</Link></Form.Text>
           </Form>
         </div>
-        <Footer/>
+     
       </div>
     );
   }

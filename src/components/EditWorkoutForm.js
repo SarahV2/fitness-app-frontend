@@ -44,7 +44,7 @@ export default class EditWorkoutForm extends Component {
       .patch(`http://localhost:5000/api/workouts/${workoutID}`, workout)
       .then((res) => {
         console.log(res);
-        window.location.href = '/';
+        window.location.href = '/home';
       })
       .catch((error) => {
         console.log(error);

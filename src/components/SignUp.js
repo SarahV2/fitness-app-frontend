@@ -36,7 +36,7 @@ export default class SignUp extends Component {
         this.setState({
           redirect:true
         })
-
+        window.location.href = "/home";
       })
       .catch((error) => {
         this.toggleAlert();
@@ -70,7 +70,7 @@ export default class SignUp extends Component {
     const loggedIn = localStorage.getItem('currentName');
 
     if (this.state.redirect||loggedIn) {
-      window.location.href = "/";
+      window.location.href = "/home";
     }
 
     const { showAlerts, errorMessages } = this.state;
@@ -134,7 +134,7 @@ export default class SignUp extends Component {
 
           </Form>
         </div>
-        <Footer/>
+ 
       </div>
     );
   }

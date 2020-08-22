@@ -3,6 +3,8 @@ import { Button } from 'react-bootstrap';
 import MusclesList from './MusclesList';
 import axios from 'axios';
 import Login from './Login';
+import Footer from './Footer';
+import { Redirect } from 'react-router-dom';
 export default class Home extends Component {
   state = {
     userWorkouts: '',
@@ -44,7 +46,15 @@ export default class Home extends Component {
 
     today = dd + '/' + mm + '/' + yyyy;
     console.log(today);
-    var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    var days = [
+      'Sunday',
+      'Monday',
+      'Tuesday',
+      'Wednesday',
+      'Thursday',
+      'Friday',
+      'Saturday',
+    ];
     var dayName = days[new Date().getDay()];
 
     return (
@@ -52,29 +62,19 @@ export default class Home extends Component {
         <div className='row justify-content-center '>
           <img
             id='main-img'
-            src={require('./../images/2l.jpg')}
+            src={require('./../images/fit2.jpg')}
             className='img-fluid'
             style={{
               width: '100vw',
-              height: '30vh',
+              height: '35vh',
               marginTop: '0.8%',
               marginBottom: '2%',
             }}
           />
         </div>
 
-        {!userID ? <Login /> : ''}
+        {!userID ? <Redirect to='/home'/> : ''}
         {userWorkouts !== '' ? <MusclesList workouts={userWorkouts} /> : ''}
-
-        <footer class='footer'>
-          <div class=' container footer-m'>
-            <div class='col-md-12 col-sm-12 col-xs-12 '>
-              <p class='copyright-text'>
-                Copyright &copy; 2020 All Rights Reserved
-              </p>
-            </div>
-          </div>
-        </footer>
       </div>
     );
   }
