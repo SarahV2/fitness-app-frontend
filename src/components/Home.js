@@ -35,9 +35,9 @@ export default class Home extends Component {
         <div className='row justify-content-center '>
           <img
             id='main-img'
-            src={require('./../images/main.jpg')}
+            src={require('./../images/2l.jpg')}
             className='img-fluid'
-            style={{ width: '100vw', marginTop: '0.4%', marginBottom: '2%' }}
+            style={{ width: '100vw', marginTop: '0.1%', marginBottom: '2%' }}
           />
         </div>
         {!userID?<Login/>:''}

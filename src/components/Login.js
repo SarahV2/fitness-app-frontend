@@ -80,8 +80,9 @@ export default class Login extends Component {
 
     return (
       <div className='col'>
+        <br/>
         <h3>Login to Continue</h3>
-        <div className='col-md-5 col-xs-12 signup-form'>
+        <div className='col-md-6 col-lg-3 col-xs-6 col-sm-6 login-form'>
           <Form>
             {showAlerts ? <div id='alerts-container'>{alerts}</div> : ''}
 
@@ -108,13 +109,14 @@ export default class Login extends Component {
             <div id='submit-button'>
               <Button
                 onClick={(e) => this.handleClick(e)}
-                variant='primary'
+                variant='light'
                 type='submit'
               >
                 Submit
               </Button>
             </div>
-            <Form.Text>Doesn't have an account? <Link to='/signup'>Sign Up</Link></Form.Text>
+            <br/>
+            <Form.Text className="text-center">Doesn't have an account? <Link to='/signup'>Sign Up</Link></Form.Text>
           </Form>
         </div>
       </div>

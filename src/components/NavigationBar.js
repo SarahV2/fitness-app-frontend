@@ -22,7 +22,7 @@ export class NavigationBar extends Component {
     this.setState({
       loggedIn: false,
     });
-    window.location.href = "/";
+    window.location.href = '/';
   };
   render() {
     if (this.state.redirect) {
@@ -34,12 +34,17 @@ export class NavigationBar extends Component {
 
     return (
       <Navbar collapseOnSelect expand='lg' bg='dark' variant='dark'>
-        <Navbar.Brand href='/'>Fitness</Navbar.Brand>
+        <Navbar.Brand href='/'>
+          <img
+            style={{ width: '150px' }}
+            src={require('./../images/hello.png')}
+          />
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls='responsive-navbar-nav' />
         <Navbar.Collapse id='responsive-navbar-nav'>
           <Nav className='mr-auto'>
+            <Nav.Link href='/tips'>Tips</Nav.Link>
             <Nav.Link href='#aboutus'>About Us</Nav.Link>
-            <Nav.Link href='#tips'>Tips</Nav.Link>
           </Nav>
           <Nav>
             {!loggedIn ? (

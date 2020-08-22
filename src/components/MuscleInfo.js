@@ -15,11 +15,10 @@ export default class MuscleInfo extends Component {
   };
 
   componentDidMount() {
-    console.log(this.props)
+    console.log(this.props);
 
     if (this.props.workoutExists == true) {
-      this.setState({ visibleButton: false,
-    });
+      this.setState({ visibleButton: false });
     }
 
     this.setState({
@@ -45,16 +44,21 @@ export default class MuscleInfo extends Component {
   };
 
   render() {
-    const { currentMuscle, muscleImg, visibleButton,workoutDetails } = this.state;
-    if (currentMuscle && muscleImg !== ''&&workoutDetails!=='') {
-        console.log(workoutDetails)
+    const {
+      currentMuscle,
+      muscleImg,
+      visibleButton,
+      workoutDetails,
+    } = this.state;
+    if (currentMuscle && muscleImg !== '' && workoutDetails !== '') {
+      console.log(workoutDetails);
       return (
         <div className=' muscleInfo col-sm-4 col-xs-12'>
           <h3>{currentMuscle.name}</h3>
           <img
             src={require(`./../images/${muscleImg}`)}
             className='img-fluid'
-            style={{ width: '50%', height: '50%' }}
+            style={{ width: '60%', height: '60%' }}
           />
           <br />
           {visibleButton ? (
@@ -66,7 +70,7 @@ export default class MuscleInfo extends Component {
               View Details
             </Button>
           )}
- <br />
+          <br />
           {this.state.displayForm ? (
             <NewWorkoutForm muscleID={currentMuscle.id} />
           ) : (

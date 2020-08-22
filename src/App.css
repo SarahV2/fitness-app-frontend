@@ -49,14 +49,16 @@ body{
 
 .col{
   text-align: center;
+  /* background-color: lightgrey; */
 }
-.signup-form{
+.signup-form,.login-form{
   text-align: left;
   padding:10px;
   border: 1px solid black;
   border-radius: 5px;
   display: inline-block;
   margin-bottom: 10px;
+  background-color:lightgrey;
 }
 
 #submit-button{
@@ -71,8 +73,17 @@ body{
 
 @media only screen and (max-width: 600px) {
   .muscleInfo{
-    margin-bottom: 80%;
+    margin-bottom: 30%;
   }
   
 }
 
+
+.navbar-nav a{
+  font-size: 18px !important;
+}
+
+.form-label,.form-text{
+  color: black;
+  
+}

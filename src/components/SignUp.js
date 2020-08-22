@@ -83,6 +83,7 @@ export default class SignUp extends Component {
     }
     return (
       <div className='col'>
+        <br/>
         <h3>Sign Up</h3>
         <div className='col-md-5 col-xs-12 signup-form'>
           <Form>
@@ -121,13 +122,14 @@ export default class SignUp extends Component {
             <div id='submit-button'>
               <Button
                 onClick={(e) => this.handleClick(e)}
-                variant='primary'
+                variant='light'
                 type='submit'
               >
                 Submit
               </Button>
             </div>
-            <Form.Text>Already have an account? <Link to='/login'>Log in</Link></Form.Text>
+            <br/>
+            <Form.Text className="text-center">Already have an account? <Link to='/login'>Log in</Link></Form.Text>
 
           </Form>
         </div>
