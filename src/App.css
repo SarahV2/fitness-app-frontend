@@ -43,47 +43,79 @@
   margin: 1% 0;
 }
 
-body{
+body {
   overflow-x: hidden;
 }
 
-.col{
+.col {
   text-align: center;
   /* background-color: lightgrey; */
 }
-.signup-form,.login-form{
+.signup-form,
+.login-form {
   text-align: left;
-  padding:10px;
+  padding: 10px;
   border: 1px solid black;
   border-radius: 5px;
   display: inline-block;
   margin-bottom: 10px;
-  background-color:lightgrey;
+  background-color: lightgrey;
 }
 
-#submit-button{
+.new-workout-form {
+  text-align: left;
+  padding: 10px;
+  display: inline-block;
+  margin-bottom: 10px;
+  background-color: lightgrey;
+}
+
+#submit-button {
   text-align: center;
 }
 
-#userName{
+#userName {
   color: orange;
   font-weight: bold;
 }
 
-
 @media only screen and (max-width: 600px) {
-  .muscleInfo{
+  .muscleInfo {
     margin-bottom: 30%;
   }
-  
 }
 
-
-.navbar-nav a{
+.navbar-nav a {
   font-size: 18px !important;
 }
 
-.form-label,.form-text{
+.form-label,
+.form-text {
   color: black;
-  
+}
+
+#form-modal {
+  background-color: lightgrey !important;
+  border-radius: 5px;
+  border: 1px solid black;
+  padding-bottom: 7px;
+}
+
+#form-title {
+  padding-top: 7px;
+  color: black;
+  font-size: 1.2em;
+  font-family: 'Do Hyeon', sans-serif;
+}
+
+#close-button {
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 5px;
+  color:black;
+}
+
+#close-button:hover {
+  background-color: black;
+  color: white;
 }

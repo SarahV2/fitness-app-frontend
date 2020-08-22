@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Button } from 'react-bootstrap';
 import NewWorkoutForm from './NewWorkoutForm';
 import WorkoutDetails from './WorkoutDetails';
+import Modal from 'react-awesome-modal';
 
 export default class MuscleInfo extends Component {
   state = {
@@ -12,6 +13,7 @@ export default class MuscleInfo extends Component {
     workoutStatus: false,
     workoutDetails: '',
     visibleButton: true,
+    visible: false,
   };
 
   componentDidMount() {
@@ -29,6 +31,18 @@ export default class MuscleInfo extends Component {
     });
 
     console.log(this.state);
+  }
+
+  openModal() {
+    this.setState({
+      visible: true,
+    });
+  }
+
+  closeModal() {
+    this.setState({
+      visible: false,
+    });
   }
 
   toggleFormDisplay = () => {
@@ -62,7 +76,11 @@ export default class MuscleInfo extends Component {
           />
           <br />
           {visibleButton ? (
-            <Button onClick={() => this.toggleFormDisplay()} variant='info'>
+            <Button
+              value='Open'
+              onClick={() => this.openModal()}
+              variant='info'
+            >
               Add
             </Button>
           ) : (
@@ -82,6 +100,22 @@ export default class MuscleInfo extends Component {
           ) : (
             ''
           )}
+
+          <Modal
+            visible={this.state.visible}
+            width='350'
+            height='420'
+            effect='fadeInDown'
+            onClickAway={() => this.closeModal()}
+          >
+            <div id='form-modal'>
+              <h6 id='form-title'>Record an excercise to {currentMuscle.name}</h6>
+              <NewWorkoutForm muscleID={currentMuscle.id} />
+              <a id='close-button' href='javascript:void(0);' onClick={() => this.closeModal()}>
+                Close
+              </a>
+            </div>
+          </Modal>
         </div>
       );
     } else {
