@@ -6,6 +6,9 @@ let listOfMuscles = [
   { id: 1, name: 'Muscle 1', url: 'img001.jpg' },
   { id: 2, name: 'Muscle 2', url: 'img002.jpg' },
   { id: 3, name: 'Muscle 3', url: 'img003.jpg' },
+  { id: 4, name: 'Muscle 4', url: 'img003.jpg' },
+  { id: 5, name: 'Muscle 5', url: 'img003.jpg' },
+  { id: 6, name: 'Muscle 6', url: 'img003.jpg' },
 ];
 export default class MusclesList extends Component {
   state = {

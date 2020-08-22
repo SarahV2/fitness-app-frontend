@@ -3,6 +3,7 @@ import { Button } from 'react-bootstrap';
 import MusclesList from './MusclesList';
 import axios from 'axios';
 import Login from './Login';
+import Footer from './Footer';
 export default class Home extends Component {
   state = {
     userWorkouts: '',
@@ -37,12 +38,13 @@ export default class Home extends Component {
             id='main-img'
             src={require('./../images/2l.jpg')}
             className='img-fluid'
-            style={{ width: '100vw', marginTop: '0.1%', marginBottom: '2%' }}
+            style={{ width: '100vw', height:'30vh', marginTop: '0.1%', marginBottom: '2%' }}
           />
         </div>
         {!userID?<Login/>:''}
         {userWorkouts!==''? <MusclesList workouts={userWorkouts} />:''}
      
+     <Footer/>
       </div>
     );
   }
