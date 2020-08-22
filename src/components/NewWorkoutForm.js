@@ -19,13 +19,14 @@ export default class NewWorkoutForm extends Component {
     const { exerciseName, sets,reps,notes } = this.state;
     const {muscleID}=this.props
     const userID=JSON.parse(localStorage.getItem('currentUserID'))
-    
+    console.log('new workout')
+    console.log(userID)
     const workout = {
         exerciseName, sets,reps,notes,userID,muscleID
     };
     console.log(workout);
 
-    axios
+     axios
       .post('http://localhost:5000/api/workouts', workout)
       .then((res) => {
         console.log(res);

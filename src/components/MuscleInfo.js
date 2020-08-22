@@ -68,12 +68,14 @@ export default class MuscleInfo extends Component {
       console.log(workoutDetails);
       return (
         <div className=' muscleInfo col-sm-4 col-xs-12'>
+          <div>
           <h3>{currentMuscle.name}</h3>
           <img
             src={require(`./../images/${muscleImg}`)}
             className='img-fluid'
             style={{ width: '60%', height: '60%' }}
           />
+          </div>
           <br />
           {visibleButton ? (
             <Button
@@ -94,13 +96,13 @@ export default class MuscleInfo extends Component {
           ) : (
             ''
           )}
-
+<br/>
           {this.state.viewDetails ? (
             <WorkoutDetails workout={workoutDetails} />
           ) : (
             ''
           )}
-
+<br/>
           <Modal
             visible={this.state.visible}
             width='350'

@@ -59,6 +59,16 @@ export default class Tips extends Component {
          
                 
             </div>
+            
+           <footer class='site-footer'>
+           <div class=' container footer-m'>
+          <div class='col-md-12 col-sm-12 col-xs-12 '>
+            <p class='copyright-text'>
+              Copyright &copy; 2020 All Rights Reserved
+            </p>
+          </div>
+        </div>
+           </footer>
 
             </div>
          

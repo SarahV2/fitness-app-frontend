@@ -33,7 +33,7 @@ export class NavigationBar extends Component {
     const name = JSON.parse(localStorage.getItem('currentName'));
 
     return (
-      <Navbar collapseOnSelect expand='lg' bg='dark' variant='dark'>
+      <Navbar fixed="top" collapseOnSelect expand='lg' bg='dark' variant='dark'>
         <Navbar.Brand href='/'>
           <img
             style={{ width: '150px' }}

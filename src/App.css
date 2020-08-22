@@ -79,11 +79,7 @@ body {
   font-weight: bold;
 }
 
-@media only screen and (max-width: 600px) {
-  .muscleInfo {
-    margin-bottom: 30%;
-  }
-}
+
 
 .navbar-nav a {
   font-size: 18px !important;
@@ -124,5 +120,17 @@ body {
   background-color: black;
 }
 
+.navbar{
+  margin-bottom: 150px !important;
+  display: block;
+}
 
-
+body { 
+  padding-top: 70px; 
+  padding-bottom:70px;
+}
+#date{
+  font-family: 'Do Hyeon', sans-serif;
+  font-weight: lighter;
+  color: darkorange;
+}
