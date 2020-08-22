@@ -62,7 +62,7 @@ export default class EditWorkoutForm extends Component {
 
     return (
       <div className='col'>
-        <div className='workout-form col-sm-12 col-md-12 col-xs-6 signup-form'>
+        <div className='workout-form col-sm-12 col-md-12 col-xs-6 edit-workout-form'>
           <Form>
             <Form.Group>
               <Form.Label>Exercise Name</Form.Label>
@@ -117,7 +117,7 @@ export default class EditWorkoutForm extends Component {
             <div id='submit-button'>
               <Button
                 onClick={(e) => this.handleClick(e)}
-                variant='primary'
+                variant='light'
                 type='submit'
               >
                 Submit

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Form, Button, Alert } from 'react-bootstrap';
 import axios from 'axios';
 import {Link} from 'react-router-dom'
+import Footer from './Footer';
 
 export default class SignUp extends Component {
   state = {
@@ -83,9 +84,9 @@ export default class SignUp extends Component {
     }
     return (
       <div className='col'>
-        <br/>
+        <br/><br/>
         <h3>Sign Up</h3>
-        <div className='col-md-5 col-xs-12 signup-form'>
+        <div className='col-md-5 col-xs-4 col-sm-4 col-lg-3 signup-form'>
           <Form>
             {showAlerts ? <div id='alerts-container'>{alerts}</div> : ''}
 
@@ -133,6 +134,7 @@ export default class SignUp extends Component {
 
           </Form>
         </div>
+        <Footer/>
       </div>
     );
   }

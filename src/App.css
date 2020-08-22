@@ -60,9 +60,13 @@ body {
   display: inline-block;
   margin-bottom: 10px;
   background-color: lightgrey;
+  padding-bottom:2%;
+  padding-top:2%;
+  width:20%;
+  
 }
 
-.new-workout-form {
+.new-workout-form,.edit-workout-form {
   text-align: left;
   padding: 10px;
   display: inline-block;

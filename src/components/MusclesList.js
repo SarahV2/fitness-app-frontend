@@ -29,6 +29,24 @@ export default class MusclesList extends Component {
   };
 
   render() {
+    var today = new Date();
+    var dd = today.getDate();
+
+    var mm = today.getMonth() + 1;
+    var yyyy = today.getFullYear();
+    if (dd < 10) {
+      dd = '0' + dd;
+    }
+
+    if (mm < 10) {
+      mm = '0' + mm;
+    }
+
+    today = dd + '/' + mm + '/' + yyyy;
+    console.log(today);
+    var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    var dayName = days[new Date().getDay()];
+
     const { userWorkouts } = this.state;
     if (userWorkouts !== '') {
       const muscles = listOfMuscles.map((muscle) => {
@@ -50,6 +68,10 @@ export default class MusclesList extends Component {
       console.log(muscles);
       return (
         <div className='flex-container'>
+                  <br/>
+          <h5 id='date'>{dayName} {today}</h5>
+          <br/>
+        <hr />
           <div className='row justify-content-start'>{muscles}</div>
         </div>
       );

@@ -62,9 +62,7 @@ export default class Home extends Component {
             }}
           />
         </div>
-          <h4 id='date'>{dayName} {today}</h4>
-          <br/>
-        <hr />
+
         {!userID ? <Login /> : ''}
         {userWorkouts !== '' ? <MusclesList workouts={userWorkouts} /> : ''}
 

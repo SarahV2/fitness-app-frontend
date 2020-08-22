@@ -33,7 +33,7 @@ export class NavigationBar extends Component {
     const name = JSON.parse(localStorage.getItem('currentName'));
 
     return (
-      <Navbar fixed="top" collapseOnSelect expand='lg' bg='dark' variant='dark'>
+      <Navbar fixed='top' collapseOnSelect expand='lg' bg='dark' variant='dark'>
         <Navbar.Brand href='/'>
           <img
             style={{ width: '150px' }}
@@ -43,6 +43,7 @@ export class NavigationBar extends Component {
         <Navbar.Toggle aria-controls='responsive-navbar-nav' />
         <Navbar.Collapse id='responsive-navbar-nav'>
           <Nav className='mr-auto'>
+            <Nav.Link href='/myreport'>My Report</Nav.Link>
             <Nav.Link href='/tips'>Tips</Nav.Link>
             <Nav.Link href='#aboutus'>About Us</Nav.Link>
           </Nav>
