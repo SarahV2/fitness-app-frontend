@@ -44,8 +44,8 @@ export class NavigationBar extends Component {
         <Navbar.Toggle aria-controls='responsive-navbar-nav' />
         <Navbar.Collapse id='responsive-navbar-nav'>
           <Nav className='mr-auto'>
-            {loggedIn?<Nav.Link href='/myreport'>My Report</Nav.Link>:''}
-            
+            {loggedIn ? <Nav.Link href='/myreport'>Report</Nav.Link> : ''}
+
             <Nav.Link href='/tips'>Tips</Nav.Link>
             <Nav.Link href='/about'>About Us</Nav.Link>
           </Nav>

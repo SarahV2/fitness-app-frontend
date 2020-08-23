@@ -76,11 +76,11 @@ export default class UserWorkouts extends Component {
           <h5> Workout History</h5>
           <div className='d-flex justify-content-center align-items-center'>
             {/* <div className='user-history flex-container'> */}
-            <div className=' col-sm-12 col-md-12 col-xs-12 col-lg-6 '>
+            
               {/* {toshow} */}
 
               {finalized}
-            </div>
+           
             <Footer />
 
             {/* </div> */}
