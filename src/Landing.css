@@ -39,3 +39,6 @@
     color:white;
     text-shadow: black;
   }
+  body{
+    padding-bottom: 30px;
+  }
