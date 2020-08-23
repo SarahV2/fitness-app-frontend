@@ -1,15 +1,10 @@
 import React, { Component } from 'react';
 import {
-  Container,
-  Row,
-  Alert,
+
   CardHeader,
   Card,
-  CardFooter,
-  CardTitle,
-  CardText,
+
   CardBody,
-  Col,
 } from 'reactstrap';
 import { ListGroup, ListGroupItem } from 'reactstrap';
 import { Button } from 'react-bootstrap';

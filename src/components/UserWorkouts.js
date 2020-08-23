@@ -3,12 +3,13 @@ import axios from 'axios';
 import WorkoutInfo from './WorkoutInfo';
 import Footer from './Footer';
 import { Redirect } from 'react-router-dom';
-import { Container } from 'reactstrap';
 import NoWorkoutFound from './NoWorkoutFound';
+import { sortByDate } from './../utils/helpers';
+
 export default class UserWorkouts extends Component {
   state = {
     userWorkouts: '',
-    datesArray: [],
+    sortedWorkouts: [],
   };
 
   componentDidMount() {
@@ -16,7 +17,7 @@ export default class UserWorkouts extends Component {
     if (userID) {
       axios({
         method: 'get',
-        url: 'http://localhost:5000/api/workouts',
+        url: 'http://localhost:5000/api/workouts/all',
         params: {
           userID,
         },
@@ -25,31 +26,42 @@ export default class UserWorkouts extends Component {
         this.setState({
           userWorkouts: res.data,
         });
-        //this.calculate();
+
+        let result = sortByDate({ items: res.data }).getTimes();
+
+        this.setState({
+          sortedWorkouts: result,
+        });
+        console.dir(this.state.sortedWorkouts);
       });
     }
   }
 
-  // calculate = () => {
-  //   for (var i = 0; i < this.state.datesArray.length; i++) {
-  //     console.log(new Date(this.state.datesArray.createdAt));
-  //   }
-  //   let array = this.state.userWorkouts.sort(function (a, b) {
-  //     var dateA = new Date(a.createdAt),
-  //       dateB = new Date(b.createdAt);
-  //     return dateA - dateB;
-  //   });
-  //   let foo = new Date(array[0].createdAt);
-  //   console.log(foo);
-
-  //   this.setState({
-  //     datesArray: array,
-  //   });
-  // };
-
   render() {
-    const { userWorkouts } = this.state;
+    const { userWorkouts, sortedWorkouts } = this.state;
     const loggedIn = JSON.parse(localStorage.getItem('currentUserID'));
+
+    const arrayOfObj = Object.entries(sortedWorkouts).map((e) => ({
+      [e[0]]: e[1],
+    }));
+
+    var rev = arrayOfObj.reverse();
+
+    const finalized = arrayOfObj.map((obj) => (
+      <div className=' col-sm-12 col-md-12 col-xs-12 col-lg-6 '>
+        {Object.values(obj).map((o) => (
+          <WorkoutInfo date={Object.keys(obj)} list={o} />
+        ))}
+      </div>
+    ));
+
+    console.log(finalized);
+    const vals = Object.values(sortedWorkouts);
+    for (const value of vals) {
+      console.log(value);
+    }
+
+    // console.log(toshow)
 
     // if (this.state.datesArray) {
     //   console.log(this.state.datesArray);
@@ -57,29 +69,26 @@ export default class UserWorkouts extends Component {
     if (!loggedIn) {
       return <Redirect to='/' />;
     }
-    if (userWorkouts.length>0) {
+    if (userWorkouts.length > 0) {
       return (
         <div className='user-history'>
-           <br />
+          <br />
           <h5> Workout History</h5>
-        <div className='d-flex justify-content-center align-items-center'>
-        {/* <div className='user-history flex-container'> */}
-       
-         
-          {/* send each workout list based on the date, we will send an array of objects */}
-          
-          <div className=' col-sm-12 col-md-12 col-xs-12 col-lg-6 '>
-          <WorkoutInfo list={userWorkouts} />
+          <div className='d-flex justify-content-center align-items-center'>
+            {/* <div className='user-history flex-container'> */}
+            <div className=' col-sm-12 col-md-12 col-xs-12 col-lg-6 '>
+              {/* {toshow} */}
+
+              {finalized}
+            </div>
+            <Footer />
+
+            {/* </div> */}
           </div>
-        
-          <Footer />
-  
-        {/* </div> */}
-        </div>
         </div>
       );
     } else {
-      return <NoWorkoutFound/>;
+      return <NoWorkoutFound />;
     }
   }
 }

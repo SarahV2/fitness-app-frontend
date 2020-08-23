@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-import { Button } from 'react-bootstrap';
 import MusclesList from './MusclesList';
 import axios from 'axios';
-import Login from './Login';
-import Footer from './Footer';
+
 import { Redirect } from 'react-router-dom';
 export default class Home extends Component {
   state = {

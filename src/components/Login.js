@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { Form, Button, Alert } from 'react-bootstrap';
 import axios from 'axios';
-import { Redirect,Link } from 'react-router-dom';
-import Footer from './Footer';
+import { Link } from 'react-router-dom';
 
 export default class Login extends Component {
   state = {

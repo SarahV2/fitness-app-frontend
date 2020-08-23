@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import { Form, Button, Alert } from 'react-bootstrap';
+import { Form, Button } from 'react-bootstrap';
 import axios from 'axios';
-import { Redirect, Link } from 'react-router-dom';
 
 export default class EditWorkoutForm extends Component {
   state = {

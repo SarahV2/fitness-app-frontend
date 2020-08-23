@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 import MuscleInfo from './MuscleInfo';
 let listOfMuscles = [
   { id: 1, name: 'Abdominis', url: 'img001.jpeg' },

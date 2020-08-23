@@ -4,7 +4,7 @@ import './../Footer.css';
 export default class Footer extends Component {
   render() {
     return (
-       <footer class='site-footer'>
+       <footer className='site-footer'>
             {/* // <footer class='footer'> */}
         {/* <div class='container'>
           <div class='col-sm-12 col-md-12 col-xs-12'>
@@ -13,9 +13,9 @@ export default class Footer extends Component {
           </div>
           <hr />
         </div> */}
-        <div class=' footer-m'>
-          <div class='col-md-12 col-sm-12 col-xs-12 '>
-            <p class='copyright-text'>
+        <div className=' footer-m'>
+          <div className='col-md-12 col-sm-12 col-xs-12 '>
+            <p className='copyright-text'>
               Copyright &copy; 2020 All Rights Reserved
             </p>
           </div>

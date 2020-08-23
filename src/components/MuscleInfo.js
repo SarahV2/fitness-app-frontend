@@ -74,6 +74,7 @@ export default class MuscleInfo extends Component {
             src={require(`./../images/${muscleImg}`)}
             className='img-fluid'
             style={{ width: '60%', height: '60%' }}
+            alt='muscle-image'
           />
           </div>
           <br />

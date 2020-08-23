@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { CardBody, ListGroup, ListGroupItem,CardHeader } from 'reactstrap';
-
+import {getMuscleName} from './utils/helpers'
 export default class ExerciseDetails extends Component {
   state = {
     currentExercise: '',
@@ -19,7 +19,7 @@ export default class ExerciseDetails extends Component {
     if (currentExercise) {
       return (
         <div>
-          <CardHeader className='exerciseCard'>{currentExercise.muscleID}</CardHeader>
+          <CardHeader className='exerciseCard'>{getMuscleName(currentExercise.muscleID)}</CardHeader>
           <CardBody>
             <ListGroup variant='flush' className='text-left'>
               <ListGroupItem>

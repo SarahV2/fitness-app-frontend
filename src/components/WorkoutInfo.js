@@ -9,18 +9,22 @@ export default class WorkoutInfo extends Component {
 
     state={
         // recieve the list of workouts of a particular day
-        listOfExercises:[]
+        listOfExercises:[],
+        date:''
     }
 
     componentDidMount(){
         const listOfExercises=this.props.list
+        const {date}=this.props
+        console.log(this.props.date)
         this.setState({
-            listOfExercises
+            listOfExercises,
+            date
         })
     }
 
   render() {
-      const {listOfExercises}=this.state
+      const {listOfExercises,date}=this.state
 
       if(listOfExercises){
     return (
@@ -29,7 +33,7 @@ export default class WorkoutInfo extends Component {
           <div className=' col-sm-12 col-md-12 col-xs-12 '>
             <Card>
               <CardHeader className='text-center date-header'>
-                <b>Some Date</b>
+                <b>{date}</b>
               </CardHeader>
               <CardBody>
 
