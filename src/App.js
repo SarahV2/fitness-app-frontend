@@ -20,13 +20,13 @@ function App() {
       <NavigationBar />
       <Router>
         <Switch>
-          <Route exact path='/home' component={Home} />
+          <Route exact path='/' component={Landing} />
+          <Route path='/home' component={Home} />
           <Route path='/login' component={Login} />
           <Route path='/signup' component={SignUp} />
           <Route path='/tips' component={Tips} />
           <Route path='/myreport' component={UserWorkouts} />
           <Route path='/about' component={AboutUs} />
-          <Route path='/' component={Landing} />
           <Route component={NotFound} />
         </Switch>
       </Router>

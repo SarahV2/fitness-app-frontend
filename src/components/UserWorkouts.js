@@ -4,6 +4,7 @@ import WorkoutInfo from './WorkoutInfo';
 import Footer from './Footer';
 import { Redirect } from 'react-router-dom';
 import { Container } from 'reactstrap';
+import NoWorkoutFound from './NoWorkoutFound';
 export default class UserWorkouts extends Component {
   state = {
     userWorkouts: '',
@@ -56,7 +57,7 @@ export default class UserWorkouts extends Component {
     if (!loggedIn) {
       return <Redirect to='/' />;
     }
-    if (userWorkouts) {
+    if (userWorkouts.length>0) {
       return (
         <div className='user-history'>
            <br />
@@ -78,7 +79,7 @@ export default class UserWorkouts extends Component {
         </div>
       );
     } else {
-      return <p>An error occured</p>;
+      return <NoWorkoutFound/>;
     }
   }
 }

@@ -138,7 +138,6 @@ body {
 }
 
 .page-not-found {
-  margin-top: 100px;
   font-weight: bold;
 }
 
@@ -150,6 +149,12 @@ body {
   color:white;
 }
 
-.user-history{
+.user-history,{
   margin-top: 70px;
 }
+
+.page-not-found,.no-workout-message{
+  margin-top:150px;
+}
+
+

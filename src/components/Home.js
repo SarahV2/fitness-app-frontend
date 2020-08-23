@@ -73,7 +73,7 @@ export default class Home extends Component {
           />
         </div>
 
-        {!userID ? <Redirect to='/home'/> : ''}
+        {!userID ? <Redirect to='/'/> : ''}
         {userWorkouts !== '' ? <MusclesList workouts={userWorkouts} /> : ''}
       </div>
     );
