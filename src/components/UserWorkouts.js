@@ -5,6 +5,7 @@ import Footer from './Footer';
 import { Redirect } from 'react-router-dom';
 import NoWorkoutFound from './NoWorkoutFound';
 import { sortByDate } from './../utils/helpers';
+import {Container,Col} from 'react-bootstrap'
 
 export default class UserWorkouts extends Component {
   state = {
@@ -48,7 +49,7 @@ export default class UserWorkouts extends Component {
     var rev = arrayOfObj.reverse();
 
     const finalized = arrayOfObj.map((obj) => (
-      <div className=' col-sm-12 col-md-12 col-xs-12 col-lg-6 '>
+      <div className=' col-sm-12 col-md-12 col-xs-12 col-lg-12 '>
         {Object.values(obj).map((o) => (
           <WorkoutInfo date={Object.keys(obj)} list={o} />
         ))}
@@ -71,11 +72,13 @@ export default class UserWorkouts extends Component {
     }
     if (userWorkouts.length > 0) {
       return (
-        <div className='user-history'>
+        // <div className='user-history'>
+        <Container className='user-history'>
           <br />
           <h5> Workout History</h5>
-          <div className='d-flex justify-content-center align-items-center'>
-            {/* <div className='user-history flex-container'> */}
+          <Col>
+          {/* <div className='d-flex justify-content-center align-items-center'> */}
+            <div className='container'>
             
               {/* {toshow} */}
 
@@ -83,9 +86,10 @@ export default class UserWorkouts extends Component {
            
             <Footer />
 
-            {/* </div> */}
-          </div>
-        </div>
+            </div>
+          {/* </div> */}
+          </Col>
+          </Container>
       );
     } else {
       return <NoWorkoutFound />;

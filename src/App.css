@@ -150,10 +150,20 @@ body {
 }
 
 .user-history {
-  margin-top: 70px;
+  margin-top: 50px;
+ 
 }
 
 .page-not-found,
 .no-workout-message {
   margin-top: 150px;
+}
+.image-home-banner {
+  background: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), url(./images/2l.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  color: #fff;
+  padding-top: 110px;
+  padding-bottom:110px;
 }

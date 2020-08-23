@@ -57,18 +57,17 @@ export default class Home extends Component {
 
     return (
       <div>
-        <div className='row justify-content-center '>
-          <img
-            id='main-img'
-            src={require('./../images/fit2.jpg')}
-            className='img-fluid'
-            style={{
-              width: '100vw',
-              height: '35vh',
-              marginTop: '0.8%',
-              marginBottom: '2%',
-            }}
-          />
+          
+        <div class='image-home-banner'>
+          <div class='container'>
+            <div class='row'>
+              <div class='col-md-12'>
+                <h1 class='lg-text '>Track Your Progress</h1>
+                <p class='image-aboutus-para'></p>
+              </div>
+            </div>
+          </div>
+
         </div>
 
         {!userID ? <Redirect to='/'/> : ''}
