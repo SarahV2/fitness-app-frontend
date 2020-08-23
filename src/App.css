@@ -146,15 +146,14 @@ body {
 }
 .date-header {
   background-color: rgba(255, 140, 0, 1) !important;
-  color:white;
+  color: white;
 }
 
-.user-history,{
+.user-history {
   margin-top: 70px;
 }
 
-.page-not-found,.no-workout-message{
-  margin-top:150px;
+.page-not-found,
+.no-workout-message {
+  margin-top: 150px;
 }
-
-

@@ -37,7 +37,7 @@ export class NavigationBar extends Component {
         <Navbar.Brand href='/'>
           <img
             style={{ width: '150px' }}
-            src={require('./../images/hello.png')}
+            src={require('./../images/logo.png')}
           />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls='responsive-navbar-nav' />
